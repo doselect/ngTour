@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="ngTourDemo">
+  <head>
+    <title>ngTour - App tour for humans.</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,900" rel="stylesheet">
+    <link rel="stylesheet/less" type="text/css" href="/src/ngTour.less">
+    <link rel="stylesheet/less" type="text/css" href="demo.less">
+  </head>
+  <body ng-controller="ngTourCtrl">
+    <section class="wrapper">
+      <h1>ngTour</h1>
+    </section>
+    <section class="wrapper demo">
+      <div class="card-container">
+        <div class="card" id="card1">
+          <p>Card 1</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card" id="card2">
+          <p>Card 2</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card" id="card3">
+          <p>Card 3</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card" id="card4">
+          <p>Card 4</p>
+        </div>
+      </div>
+    </section>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="/src/ngTour.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
