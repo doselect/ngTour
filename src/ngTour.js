@@ -1,5 +1,13 @@
 'use strict';
 
+var scrollIntoViewWithOffset = function (elm, offset) {
+  elm.scrollIntoView(true)
+  var scrolledY = window.scrollY
+  if (scrolledY) {
+    window.scroll(0, scrolledY - offset)
+  }
+}
+
 angular.module('ngTour', [])
   .factory('ngTour', ['$rootScope', function($rootScope) {
 
@@ -12,6 +20,7 @@ angular.module('ngTour', [])
       $rootScope.ngTour = {
         nextButtonText: 'Next'
       }
+      window.scroll(0, 0)
     }
 
     var createBackdrop = function(container) {
@@ -32,6 +41,8 @@ angular.module('ngTour', [])
 
     var drawMilestone = function(index) {
       var milestone = $rootScope.ngTour.milestones[index]
+
+      scrollIntoViewWithOffset(milestone, 72)
 
       $rootScope.ngTour.currentMilestoneIdx = index
       if ($rootScope.ngTour.currentMilestoneIdx === $rootScope.ngTour.milestones.length - 1) {
