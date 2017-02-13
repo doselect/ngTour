@@ -1,6 +1,108 @@
-.ng-tour-backdrop {
-  background: rgba(102, 51, 153, 0.8);
+#ngTour {
   position: fixed;
-  height: 100%;
-  width: 100%;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  .ngTour-overlay {
+    height: 0;
+    width: 0;
+    border-radius: 100%;
+    position: absolute;
+    visibility: visible;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition-property: height, width, box-shadow;
+    transition-property: height, width, box-shadow;
+    -webkit-transition-duration: 0.25s, 0.25s, 0.5s;
+    transition-duration: 0.25s, 0.25s, 0.5s;
+    -webkit-transition-delay: 0.25s, 0.25s, 0.75s;
+    transition-delay: 0.25s, 0.25s, 0.75s;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 0 120vmax rgba(0, 0, 0, 0.9);
+  }
+  .ngTour-content {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 2em;
+    font-weight: 300;
+    color: white;
+    flex-direction: column;
+
+    p {
+      font-family: 'Lato', sans-serif;
+      margin-bottom: 0;
+      pointer-events: none;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      background: transparent;
+      padding: 0;
+      border: 0;
+      color: #aaa;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+  .ngTour-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .ngTour-side {
+      position: absolute;
+      height: 100vmax;
+      width: 100vmax;
+      visibility: visible;
+      pointer-events: all;
+      &:nth-child(1) {
+        top: 100%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+      &:nth-child(2) {
+        bottom: 100%;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+      &:nth-child(3) {
+        top: 50%;
+        left: 100%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+      &:nth-child(4) {
+        top: 50%;
+        right: 100%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+  }
 }

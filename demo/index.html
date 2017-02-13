@@ -12,22 +12,23 @@
     </section>
     <section class="wrapper demo">
       <div class="card-container">
-        <div class="card" id="card1">
+        <div class="card" id="card1" data-tour="100" data-tour-helper="Take a tour through the app.">
           <p>Card 1</p>
         </div>
         <div class="divider"></div>
-        <div class="card" id="card2">
+        <div class="card" id="card2" data-tour="2" data-tour-helper="Find out what it is all about.">
           <p>Card 2</p>
         </div>
         <div class="divider"></div>
-        <div class="card" id="card3">
+        <div class="card" id="card3" data-tour="10" data-tour-helper="uuhh.. clicky clicky button.">
           <p>Card 3</p>
         </div>
         <div class="divider"></div>
-        <div class="card" id="card4">
+        <div class="card" id="card4" data-tour="11" data-tour-helper="That's it. Enjoy the app.">
           <p>Card 4</p>
         </div>
       </div>
+      <button ng-click="start()">Start tour</button>
     </section>
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
